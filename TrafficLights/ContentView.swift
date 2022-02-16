@@ -23,14 +23,11 @@ struct ContentView: View {
             Color.black
                 .ignoresSafeArea()
             VStack {
-                RedLight()
+                ColorLights(opacity: redOpacity, color: .red)
                     .padding(.bottom)
-                    .opacity(redOpacity)
-                YellowLight()
+                ColorLights(opacity: yellowOpacity, color: .yellow)
                     .padding(.bottom)
-                    .opacity(yellowOpacity)
-                GreenLight()
-                    .opacity(greenOpacity)
+                ColorLights(opacity: greenOpacity, color: .green)
                 Spacer()
                 
                 Button(action: {
