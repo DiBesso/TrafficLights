@@ -48,7 +48,7 @@ struct ContentView: View {
         }
     }
 
-    func buttonAction () {
+    private func buttonAction () {
         switch currentLight {
         case "Red":
             redOpacity = 1
