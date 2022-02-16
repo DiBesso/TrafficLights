@@ -7,10 +7,76 @@
 
 import SwiftUI
 
+
+
 struct ContentView: View {
+    @State private var buttonLabel = "Start"
+    
+    @State private var redOpacity = 0.5
+    @State private var yellowOpacity = 0.5
+    @State private var greenOpacity = 0.5
+    
+    @State private var currentLight = "Red"
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+
+        ZStack{
+            Color.black
+                .ignoresSafeArea()
+            VStack {
+                RedLight()
+                    .padding(.bottom)
+                    .opacity(redOpacity)
+                YellowLight()
+                    .padding(.bottom)
+                    .opacity(yellowOpacity)
+                GreenLight()
+                    .opacity(greenOpacity)
+                Spacer()
+                
+                Button(action: {
+                    buttonLabel = "Next"
+                    buttonAction()
+                }) {
+                    Text (buttonLabel)
+                        .fontWeight(.bold)
+                        .font(.title)
+                        .foregroundColor(.white)
+                        .frame(width: 200, height: 70)
+                            .overlay(
+                                Capsule(style: .continuous)
+                                    .stroke(Color.white, style: StrokeStyle(lineWidth: 5))
+                            )
+                }
+            }
+        }
+    }
+
+    func buttonAction () {
+        switch currentLight {
+        case "Red":
+            redOpacity = 1
+            yellowOpacity = 0.5
+            greenOpacity = 0.5
+            currentLight = "Yellow"
+        case "Yellow":
+            redOpacity = 0.5
+            yellowOpacity = 1
+            greenOpacity = 0.5
+            currentLight = "Green"
+        case "Green":
+            redOpacity = 0.5
+            yellowOpacity = 0.5
+            greenOpacity = 1
+            currentLight = "nil"
+        case "nil":
+            redOpacity = 0.5
+            yellowOpacity = 0.5
+            greenOpacity = 0.5
+            currentLight = "Red"
+            buttonLabel = "Start"
+        default:
+            break
+        }
     }
 }
 

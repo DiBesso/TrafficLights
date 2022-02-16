@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A461107E27BCBFBD00E429C3 /* RedLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A461107D27BCBFBD00E429C3 /* RedLight.swift */; };
+		A461108027BCC12000E429C3 /* GreenLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A461107F27BCC12000E429C3 /* GreenLight.swift */; };
+		A461108227BCC16B00E429C3 /* YellowLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A461108127BCC16B00E429C3 /* YellowLight.swift */; };
 		A4AE8D5927BCBE11007587D4 /* TrafficLightsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AE8D5827BCBE11007587D4 /* TrafficLightsApp.swift */; };
 		A4AE8D5B27BCBE11007587D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AE8D5A27BCBE11007587D4 /* ContentView.swift */; };
 		A4AE8D5D27BCBE12007587D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4AE8D5C27BCBE12007587D4 /* Assets.xcassets */; };
@@ -14,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A461107D27BCBFBD00E429C3 /* RedLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedLight.swift; sourceTree = "<group>"; };
+		A461107F27BCC12000E429C3 /* GreenLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenLight.swift; sourceTree = "<group>"; };
+		A461108127BCC16B00E429C3 /* YellowLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YellowLight.swift; sourceTree = "<group>"; };
 		A4AE8D5527BCBE11007587D4 /* TrafficLights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrafficLights.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4AE8D5827BCBE11007587D4 /* TrafficLightsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficLightsApp.swift; sourceTree = "<group>"; };
 		A4AE8D5A27BCBE11007587D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,6 +57,9 @@
 		A4AE8D5727BCBE11007587D4 /* TrafficLights */ = {
 			isa = PBXGroup;
 			children = (
+				A461107D27BCBFBD00E429C3 /* RedLight.swift */,
+				A461108127BCC16B00E429C3 /* YellowLight.swift */,
+				A461107F27BCC12000E429C3 /* GreenLight.swift */,
 				A4AE8D5827BCBE11007587D4 /* TrafficLightsApp.swift */,
 				A4AE8D5A27BCBE11007587D4 /* ContentView.swift */,
 				A4AE8D5C27BCBE12007587D4 /* Assets.xcassets */,
@@ -137,8 +146,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A461108027BCC12000E429C3 /* GreenLight.swift in Sources */,
 				A4AE8D5B27BCBE11007587D4 /* ContentView.swift in Sources */,
 				A4AE8D5927BCBE11007587D4 /* TrafficLightsApp.swift in Sources */,
+				A461108227BCC16B00E429C3 /* YellowLight.swift in Sources */,
+				A461107E27BCBFBD00E429C3 /* RedLight.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
