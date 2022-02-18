@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-
+enum CurrentLight {
+    case red, yellow, green, `nil`
+}
 
 struct ContentView: View {
     @State private var buttonLabel = "Start"
@@ -16,7 +18,8 @@ struct ContentView: View {
     @State private var yellowOpacity = 0.5
     @State private var greenOpacity = 0.5
     
-    @State private var currentLight = "Red"
+    @State private var currentLight = CurrentLight.red
+    
     var body: some View {
 
         ZStack{
@@ -28,6 +31,7 @@ struct ContentView: View {
                 ColorLights(opacity: yellowOpacity, color: .yellow)
                     .padding(.bottom)
                 ColorLights(opacity: greenOpacity, color: .green)
+                
                 Spacer()
                 
                 Button(action: {
@@ -49,30 +53,31 @@ struct ContentView: View {
     }
 
     private func buttonAction () {
+        let lightIsOn: Double = 1
+        let lightIsOff: Double = 0.5
+        
         switch currentLight {
-        case "Red":
-            redOpacity = 1
-            yellowOpacity = 0.5
-            greenOpacity = 0.5
-            currentLight = "Yellow"
-        case "Yellow":
-            redOpacity = 0.5
-            yellowOpacity = 1
-            greenOpacity = 0.5
-            currentLight = "Green"
-        case "Green":
-            redOpacity = 0.5
-            yellowOpacity = 0.5
-            greenOpacity = 1
-            currentLight = "nil"
-        case "nil":
-            redOpacity = 0.5
-            yellowOpacity = 0.5
-            greenOpacity = 0.5
-            currentLight = "Red"
+        case .red:
+            redOpacity = lightIsOn
+            yellowOpacity = lightIsOff
+            greenOpacity = lightIsOff
+            currentLight = .yellow
+        case .yellow:
+            redOpacity = lightIsOff
+            yellowOpacity = lightIsOn
+            greenOpacity = lightIsOff
+            currentLight = .green
+        case .green:
+            redOpacity = lightIsOff
+            yellowOpacity = lightIsOff
+            greenOpacity = lightIsOn
+            currentLight = .nil
+        case .nil:
+            redOpacity = lightIsOff
+            yellowOpacity = lightIsOff
+            greenOpacity = lightIsOff
+            currentLight = .red
             buttonLabel = "Start"
-        default:
-            break
         }
     }
 }
